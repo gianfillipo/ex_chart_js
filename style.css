@@ -13,12 +13,12 @@ h1{
     color:#ecf0f1;
     font-size: 50px;
     position: relative;
-    top: 20vh;
+    top: 15vh;
     text-align: center;
 }
 
 .container{
-    height: 800px;
+    height: 80vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
