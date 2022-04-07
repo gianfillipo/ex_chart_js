@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+        <h1>Gráficos com ChartJs</h1>
+
+    <div class="container">
+        <div class="container_grafico">
+            <div class="grafico">
+                <h3>Gráfico de linha</h3>
+                <canvas id="myChart"> </canvas>
+            </div>
+    
+        </div>
+        <div class="container_grafico">
+            <div class="grafico">
+                <h3>Gráfico de barra</h3>
+                <canvas id="myChart2"> </canvas>
+            </div>
+        </div>
+    </div>
+       
+</body>
+
+</html>
+
+<script>
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00'
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [30, 29, 27, 25, 22, 23]
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [80, 82, 80, 85, 80, 83]
+        }
+        ]
+    }
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    }
+
+    const labels2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho'
+    ]
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [22, 24, 27, 23, 10, 18]
+        },
+        {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 98, 93, 97, 88, 82]
+        }
+        ]
+    }
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    }
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    )
+
+    const myChart2 = new Chart(
+        document.getElementById("myChart2"),
+        config2
+    )
+</script>
